@@ -7,6 +7,7 @@ public class GradeOfStudent {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Your Percentage");
         int percent = sc.nextInt();
+
         if (percent < 0 || percent > 100) {
             System.out.println("Invalid percentage");
             return;
