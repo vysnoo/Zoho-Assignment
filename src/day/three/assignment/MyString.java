@@ -63,6 +63,14 @@ public class MyString {
         }
         return new MyString(lower);
     }
+    public MyString substring(int start, int end){
+        char[] substring = new char[end-start];
+        int idx=0;
+        for(int i=start;i<end;i++){
+            substring[idx++]=ch[i];
+        }
+        return new MyString(substring);
+    }
     @Override
     public String toString() {
         return new String(ch);
@@ -76,6 +84,7 @@ public class MyString {
         System.out.println(str.equals(new MyString("Hey")));
         System.out.println(str.toUpperCase());
         System.out.println(str.toLowercase());
+        System.out.println(str.substring(0,str.length()-1));
 
     }
 }
