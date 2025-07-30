@@ -71,6 +71,19 @@ public class MyString {
         }
         return new MyString(substring);
     }
+    public MyString concat(MyString other){
+        char[] concat = new char[ch.length+other.length()];
+        int temp=0;
+        for(int i=0;i<concat.length;i++){
+            if(i<ch.length) {
+                concat[i] = ch[i];
+            }
+            if(i>=ch.length){
+                concat[i]=other.charAt(temp++);
+            }
+        }
+        return new MyString(concat);
+    }
     @Override
     public String toString() {
         return new String(ch);
@@ -85,6 +98,7 @@ public class MyString {
         System.out.println(str.toUpperCase());
         System.out.println(str.toLowercase());
         System.out.println(str.substring(0,str.length()-1));
+        System.out.println(str.concat(new MyString("Vishnu")));
 
     }
 }
