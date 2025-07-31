@@ -84,6 +84,45 @@ public class MyString {
         }
         return new MyString(concat);
     }
+    public boolean contains(MyString sub){
+
+        if (sub.length() == 0 || sub.length() > this.length()) return false;
+
+        for (int i = 0; i <= this.length() - sub.length(); i++) {
+            boolean match = true;
+            for (int j = 0; j < sub.length(); j++) {
+                if (this.ch[i + j] != sub.charAt(j)) {
+                    match = false;
+                    break;
+                }
+            }
+            if (match) return true;
+        }
+        return false;
+
+    }
+
+    public  int indexOf(char ch){
+        for(int i=0;i<this.ch.length;i++){
+            if(this.ch[i]==ch){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public MyString replace(char oldChar, char newChar){
+        char[] replaced = new char[ch.length];
+        for(int i=0;i<ch.length;i++){
+            if(ch[i]==oldChar){
+                replaced[i] = newChar;
+            }else{
+                replaced[i]= ch[i];
+            }
+        }
+        return new MyString(replaced);
+    }
+
     @Override
     public String toString() {
         return new String(ch);
@@ -99,6 +138,9 @@ public class MyString {
         System.out.println(str.toLowercase());
         System.out.println(str.substring(0,str.length()-1));
         System.out.println(str.concat(new MyString("Vishnu")));
+        System.out.println(new MyString("ey"));
+        System.out.println(str.indexOf('e'));
+        System.out.println(str.replace('H','W'));
 
     }
 }
