@@ -16,7 +16,6 @@ class SingletonMain{
     public static void main(String[] args) {
         SingletonClassEx obj1 = SingletonClassEx.getInstance();
         SingletonClassEx obj2 = SingletonClassEx.getInstance();
-
         System.out.println(obj1==obj2);
     }
 }
