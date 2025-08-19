@@ -39,3 +39,6 @@ public class MultipleCatchDemo {
         System.out.println("Program finished.");
     }
 }
+// In this code input mismatch never happend because input mistach is
+// if i have int n = sc.nextInt(); if i enter "abc" in the integer input it throws the input InputMismatchException exception
+// and for using InputMismatchException we need to import explcitly
